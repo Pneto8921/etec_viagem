@@ -31,6 +31,8 @@ public class GastoService {
 		if (!existe.isPresent()) {
 			throw new RuntimeException("Viagem não encontrada.");
 		}
+		//NÃO INSERIR UM GASTO SE A VIAGEM EXISTE POREM LA FOI FINALIZADO
+		//NÃO INSERIR UM  GASTO SE A DATA DO GASTO E ANTERIOR A DATA DE vIAGEM
 		return gastorepository.save(obj);
 	}
 	
